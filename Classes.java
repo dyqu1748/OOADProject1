@@ -1,3 +1,5 @@
+import java.util.Random; 
+
 public class Animal{
     String name;
     
@@ -26,7 +28,8 @@ public class Animal{
 public class Feline extends Animal{
     
     public void sleep(){
-        int chance = rand.nextInt(100) + 1
+        Random rand = new Random(); 
+        int chance = rand.nextInt(100) + 1;
         if (chance <= 30){
             // roam instead
             this.roam();
@@ -76,7 +79,7 @@ public class Lion extends Feline{
 public class Pachyderm extends Animal{
     
     public void roam(){
-        int chance = rand.nextInt(100) + 1
+        int chance = rand.nextInt(100) + 1;
         if (chance <= 25){
             // charge
             System.out.println(this.name + " charges.");
@@ -143,7 +146,7 @@ public class Dog extends Canine{
     }
     
     public void roam(){
-        int chance = rand.nextInt(100) + 1
+        int chance = rand.nextInt(100) + 1;
         if (chance <= 25){
             // Dig 
             System.out.println(this.name + " digs.");
