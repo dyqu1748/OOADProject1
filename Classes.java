@@ -1,4 +1,5 @@
 public class Animal{
+    String name;
     
     public void wakeUp(){
         System.out.println(this.name + " wakes up.");
@@ -47,28 +48,28 @@ public class Feline extends Animal{
 }
 
 public class Tiger extends Feline{
-    String name;
+    String[] nameChoice = {"Tony", "Tina"};
     
     public Tiger(){
-        name = "Tony";
+        //Assign name according to the number of tigers created
     }
     
 }
 
 public class Cat extends Feline{
-    String name;
+    String[] nameChoice = {"Charlie", "Carly"};
     
     public Cat(){
-        name = "Charlie";
+        //Assign name according to the number of cats created
     }
     
 }
 
 public class Lion extends Feline{
-    String name;
+    String[] nameChoice = {"Leo", "Lily"};
     
     public Lion(){
-        name = "Leo";
+        //Assign name according to the number of lions created
     }
 }
 
@@ -88,10 +89,10 @@ public class Pachyderm extends Animal{
 }
 
 public class Rhino extends Pachyderm{
-    String name;
+    String[] nameChoice = {"Robbie", "Ryan"};
     
     public Rhino(){
-        name = "Robbie";
+        //Assign name according to the number of rhinos created
     }
     
     public void makeNoise(){
@@ -101,10 +102,10 @@ public class Rhino extends Pachyderm{
 }
 
 public class Hippo extends Pachyderm{
-    String name;
+    String[] nameChoice = {"Harry", "Hannah"};
     
     public Hippo(){
-        name = "Harry";
+        //Assign name according to the number of hippos created
     }
     
     public void makeNoise(){
@@ -114,10 +115,10 @@ public class Hippo extends Pachyderm{
 }
 
 public class Elephant extends Pachyderm{
-    String name;
+    String[] nameChoice = {"Ellie", "Evan"};
     
     public Elephant(){
-        name = "Ellie";
+        //Assign name according to the number of elephants created
     }
     
     public void makeNoise(){
@@ -135,10 +136,10 @@ public class Canine extends Animal{
 }
 
 public class Dog extends Canine{
-    String name;
+    String[] nameChoice = {"Doug", "Dina"};
     
     public Dog(){
-        name = "Doug";
+        //Assign name according to the number of dogs created
     }
     
     public void roam(){
@@ -157,10 +158,10 @@ public class Dog extends Canine{
 }
 
 public class Wolf extends Canine{
-    String name;
+    String[] nameChoice = {"Will", "Wyatt"};
     
     public Wolf(){
-        name = "Willis";
+        //Assign name according to the number of wolves created
     }
     
 }
@@ -174,24 +175,31 @@ public class Cervidae extends Animal{
 }
 
 public class Moose extends Cervidae{
-    String name;
+    String[] nameChoice = {"Manny", "Miles"};
     
     public Moose(){
-        name = "Manny";
+        //Assign name according to the number of mooses created
     }
 }
 
 public class Caribou extends Cervidae{
-    String name;
+    String[] nameChoice = {"Carl", "Carole"};
     
     public Caribou(){
-        name = "Carl";
+        //Assign name according to the number of caribou created
     }
 }
 
 public class ZooEmployee{
+    String name;
+    int wage;
+        
     
-    public void wakeAnimals(){
+}
+
+public class ZooKeeper extends ZooEmployee{
+    
+        public void wakeAnimals(){
         
     }
     
@@ -207,11 +215,8 @@ public class ZooEmployee{
         
     }
     
-    public void sleep(){
+    public void putToSleep(){
         
-    
-}
-
-public class ZooKeeper extends ZooEmployee{
+    }
     
 }
