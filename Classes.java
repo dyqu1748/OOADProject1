@@ -1,3 +1,8 @@
+//Sources: https://www.geeksforgeeks.org/generating-random-numbers-in-java/
+// https://stackoverflow.com/questions/52301869/count-the-number-of-objects-created-by-java
+// https://www.javatpoint.com/string-concatenation-in-java
+// https://www.w3schools.com/java/java_constructors.asp
+
 import java.util.Random; 
 
 abstract class Animal{
@@ -336,6 +341,7 @@ abstract class ZooEmployee{
         System.out.println(this.role + " goes home ");
     }
     
+    //Getter and setter functions for ZooEmployee's private attributes
     public void setName(String empName){
         name = empName;
     }
