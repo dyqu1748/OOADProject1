@@ -102,7 +102,7 @@ public class Cat extends Feline{
 
 public class Lion extends Feline{
     
-    private String aniType = "Lion"
+    private String aniType = "Lion";
     private static int numAni = 0;
     String[] nameChoice = {"Leo", "Lily"};
     
