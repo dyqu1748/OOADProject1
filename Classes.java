@@ -1,9 +1,11 @@
 import java.util.Random; 
 
 abstract class Animal{
-    //The name of each animal will be its unique identifier (no two animals have the same name).
     private String name;
     private String aniType;
+    //Every animal will have an id attribute to uniquely identify them. It will correlate to when they created with respect to the other animals.
+    private int aniID;
+    private static int aniCount = 0;
     
     public void wakeUp(){
         System.out.println(this.name + " the " + this.aniType + " wakes up.");
@@ -41,7 +43,16 @@ abstract class Animal{
     }
     
     public void setAniType(String newAniType){
-        aniType = aniType;
+        aniType = newAniType;
+    }
+    
+    public void setAniID(){
+        aniCount++;
+        aniID = aniCount;
+    }
+    
+    public int getAniID(){
+        return aniID;
     }
     
 }
@@ -91,6 +102,7 @@ class Tiger extends Feline{
         //Assign name according to the number of lions created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Tiger");
+        this.setAniID();
         numAni++;
     }
     
@@ -105,6 +117,7 @@ class Cat extends Feline{
         //Assign name according to the number of cats created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Cat");
+        this.setAniID();
         numAni++;
     }
     
@@ -119,6 +132,7 @@ class Lion extends Feline{
         //Assign name according to the number of lions created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Lion");
+        this.setAniID();
         numAni++;
     }
 }
@@ -154,6 +168,7 @@ class Rhino extends Pachyderm{
         //Assign name according to the number of rhinos created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Rhino");
+        this.setAniID();
         numAni++;
     }
     
@@ -174,6 +189,7 @@ class Hippo extends Pachyderm{
         //Assign name according to the number of hippos created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Hippo");
+        this.setAniID();
         numAni++;
     }
     
@@ -194,6 +210,7 @@ class Elephant extends Pachyderm{
         //Assign name according to the number of elephants created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Elephant");
+        this.setAniID();
         numAni++;
     }
     
@@ -225,6 +242,7 @@ class Dog extends Canine{
         //Assign name according to the number of dogs created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Dog");
+        this.setAniID();
         numAni++;
     }
     
@@ -256,6 +274,7 @@ class Wolf extends Canine{
         //Assign name according to the number of wolves created (max 2).
         this.setName(nameChoice[numAni]); 
         this.setAniType("Wolf");
+        this.setAniID();
         numAni++;
     }
     
@@ -281,6 +300,7 @@ class Moose extends Cervidae{
         //Assign name according to the number of mooses created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Moose");
+        this.setAniID();
         numAni++;
     }
 }
@@ -294,16 +314,30 @@ class Caribou extends Cervidae{
         //Assign name according to the number of caribou created (max 2).
         this.setName(nameChoice[numAni]);
         this.setAniType("Caribou");
+        this.setAniID();
         numAni++;
     }
 }
 
-public class ZooEmployee{
-    private String name;
-    private int wage;
+abstract class ZooEmployee{
     
-    public void setName(String newName){
-        name = newName;
+    private String name;
+    private float wage;
+    private String role;
+    //Every employee will have an id attribute to identify them. It will correlate to when they created with respect to the other employees.
+    private int empID;
+    private static int empCount = 0;
+    
+    public void clockIn(){
+        System.out.println(this.role + " arrives ");
+    }
+    
+    public void clockOut(){
+        System.out.println(this.role + " goes home ");
+    }
+    
+    public void setName(String empName){
+        name = empName;
     }
     
     public String getEmpName(){
@@ -317,18 +351,42 @@ public class ZooEmployee{
     public float getWage(){
         return wage;
     }
+    
+    public void setRole(String empRole){
+        role = empRole;
+    }
+    
+    public String getRole(){
+        return role;
+    }
+    
+    public void setEmpID(){
+        empCount++;
+        empID = empCount;
+    }
+    
+    public int getEmpID(){
+        return empID;
+    }
         
     
 }
 
-class ZooKeeper extends ZooEmployee{
+class Zookeeper extends ZooEmployee{
     //Should take in an array/list of animals and iterate through them
+    
+    public Zookeeper(String name, int wage){
+        this.setName(name);
+        this.setWage(wage);
+        this.setRole("Zookeeper");
+        this.setEmpID();
+    }
     
     public void wakeAnimals(Animal[] zoo){
         for (int i = 0; i < zoo.length; i++){
             String aniName = zoo[i].getName();
             String aniType = zoo[i].getAniType();
-            System.out.println(this.getName() + " wakes up " + aniName + " the " + aniType +".");
+            System.out.println(this.getRole() + " wakes up " + aniName + " the " + aniType +".");
             zoo[i].wakeUp();
         }  
     }
@@ -337,7 +395,7 @@ class ZooKeeper extends ZooEmployee{
         for (int i = 0; i < zoo.length; i++){
             String aniName = zoo[i].getName();
             String aniType = zoo[i].getAniType();
-            System.out.println(this.getName() + " calls out to " + aniName + " the " + aniType + ".");
+            System.out.println(this.getRole() + " calls out to " + aniName + " the " + aniType + ".");
             zoo[i].makeNoise();
         }  
     }
@@ -346,7 +404,7 @@ class ZooKeeper extends ZooEmployee{
         for (int i = 0; i < zoo.length; i++){
             String aniName = zoo[i].getName();
             String aniType = zoo[i].getAniType();
-            System.out.println(this.getName() + " feeds " + aniName + " the " + aniType + ".");
+            System.out.println(this.getRole() + " feeds " + aniName + " the " + aniType + ".");
             zoo[i].eat();
         }  
     }
@@ -355,7 +413,7 @@ class ZooKeeper extends ZooEmployee{
         for (int i = 0; i < zoo.length; i++){
             String aniName = zoo[i].getName();
             String aniType = zoo[i].getAniType();
-            System.out.println(this.getName() + " orders " + aniName + " the " + aniType " to go roam.");
+            System.out.println(this.getRole() + " orders " + aniName + " the " + aniType + " to go roam.");
             zoo[i].roam();
         }  
     }
@@ -364,7 +422,7 @@ class ZooKeeper extends ZooEmployee{
         for (int i = 0; i < zoo.length; i++){
             String aniName = zoo[i].getName();
             String aniType = zoo[i].getAniType();
-            System.out.println(this.getName() + " puts " + aniName + " the " + aniType " to sleep.");
+            System.out.println(this.getName() + " puts " + aniName + " the " + aniType + " to sleep.");
             zoo[i].sleep();
         }  
     }
