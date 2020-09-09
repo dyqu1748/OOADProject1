@@ -1,6 +1,6 @@
 import java.util.Random; 
 
-class Animal{
+public class Animal{
     private String name;
     
     public void wakeUp(){
@@ -61,7 +61,7 @@ class Feline extends Animal{
     
 }
 
-public class Tiger extends Feline{
+class Tiger extends Feline{
     //https://stackoverflow.com/questions/52301869/count-the-number-of-objects-created-by-java
 
     private String aniType = "Tiger";
@@ -81,7 +81,7 @@ public class Tiger extends Feline{
     
 }
 
-public class Cat extends Feline{
+class Cat extends Feline{
     
     private String aniType = "Cat";
     private static int numAni = 0; 
@@ -100,7 +100,7 @@ public class Cat extends Feline{
     
 }
 
-public class Lion extends Feline{
+class Lion extends Feline{
     
     private String aniType = "Lion";
     private static int numAni = 0;
@@ -118,7 +118,7 @@ public class Lion extends Feline{
     }
 }
 
-public class Pachyderm extends Animal{
+class Pachyderm extends Animal{
     
     public void roam(){
         int chance = rand.nextInt(100) + 1;
@@ -133,7 +133,7 @@ public class Pachyderm extends Animal{
     }
 }
 
-public class Rhino extends Pachyderm{
+class Rhino extends Pachyderm{
     
     private String aniType = "Rhino";
     private static int numAni = 0;
@@ -156,7 +156,7 @@ public class Rhino extends Pachyderm{
     
 }
 
-public class Hippo extends Pachyderm{
+class Hippo extends Pachyderm{
     
     private string aniType = "Hippo";
     private static int nunAni = 0;
@@ -179,7 +179,7 @@ public class Hippo extends Pachyderm{
     
 }
 
-public class Elephant extends Pachyderm{
+class Elephant extends Pachyderm{
     
     private String aniType = "Elephant";
     private static int numAni = 0;
@@ -202,7 +202,7 @@ public class Elephant extends Pachyderm{
     
 }
 
-public class Canine extends Animal{
+class Canine extends Animal{
     
     public void makeNoise(){
         System.out.println(this.name + " growls.");
@@ -210,7 +210,7 @@ public class Canine extends Animal{
     
 }
 
-public class Dog extends Canine{
+class Dog extends Canine{
     
     private string aniType = "Dog";
     private static int numAni = 0;
@@ -242,7 +242,7 @@ public class Dog extends Canine{
     
 }
 
-public class Wolf extends Canine{
+class Wolf extends Canine{
     
     private string aniType = "Wolf";
     private static int numAni = 0;
@@ -261,7 +261,7 @@ public class Wolf extends Canine{
     
 }
 
-public class Cervidae extends Animal{
+class Cervidae extends Animal{
     
     public void makeNoise(){
         System.out.println(this.name + " bellows.");
@@ -269,7 +269,7 @@ public class Cervidae extends Animal{
     
 }
 
-public class Moose extends Cervidae{
+class Moose extends Cervidae{
     private string aniType = "Moose";
     private static int numAni = 0;
     String[] nameChoice = {"Manny", "Miles"};
@@ -286,7 +286,7 @@ public class Moose extends Cervidae{
     }
 }
 
-public class Caribou extends Cervidae{
+class Caribou extends Cervidae{
     
     private String aniType = "Caribou";
     private static int numAni = 0;
@@ -327,7 +327,7 @@ public class ZooEmployee{
     
 }
 
-public class ZooKeeper extends ZooEmployee{
+class ZooKeeper extends ZooEmployee{
     
     public void wakeAnimals(){
         
