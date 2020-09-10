@@ -1,3 +1,7 @@
+//Source: https://www.w3schools.com/java/java_arraylist.asp
+
+import java.util.ArrayList;
+
 abstract class ZooEmployee{
 
     private String name;
@@ -53,58 +57,63 @@ abstract class ZooEmployee{
 }
 
 class Zookeeper extends ZooEmployee{
-    //Should take in an array/list of animals and iterate through them
 
-    public Zookeeper(String name, int wage){
+    public Zookeeper(String name, float wage){
         this.setName(name);
         this.setWage(wage);
         this.setRole("Zookeeper");
         this.setEmpID();
     }
 
-    public void wakeAnimals(Animal[] zoo){
-        for (int i = 0; i < zoo.length; i++){
-            String aniName = zoo[i].getName();
-            String aniType = zoo[i].getAniType();
+    //Take in an arraylist of animals, iterate through them, and perform the appropriate action on them
+    public void wakeAnimals(ArrayList<Animal> zoo){
+        int len = zoo.size();
+        for (int i = 0; i < len; i++){
+            String aniName = zoo.get(i).getName();
+            String aniType = zoo.get(i).getAniType();
             System.out.println(this.getRole() + " wakes up " + aniName + " the " + aniType +".");
-            zoo[i].wakeUp();
-        }
+            zoo.get(i).wakeUp();
+        }  
     }
-
-    public void rollCall(Animal[] zoo){
-        for (int i = 0; i < zoo.length; i++){
-            String aniName = zoo[i].getName();
-            String aniType = zoo[i].getAniType();
+    
+    public void rollCall(ArrayList<Animal> zoo){
+        int len = zoo.size();
+        for (int i = 0; i < len; i++){
+            String aniName = zoo.get(i).getName();
+            String aniType = zoo.get(i).getAniType();
             System.out.println(this.getRole() + " calls out to " + aniName + " the " + aniType + ".");
-            zoo[i].makeNoise();
-        }
+            zoo.get(i).makeNoise();
+        }  
     }
-
-    public void feed(Animal[] zoo){
-        for (int i = 0; i < zoo.length; i++){
-            String aniName = zoo[i].getName();
-            String aniType = zoo[i].getAniType();
+    
+    public void feed(ArrayList<Animal> zoo){
+        int len = zoo.size();
+        for (int i = 0; i < len; i++){
+            String aniName = zoo.get(i).getName();
+            String aniType = zoo.get(i).getAniType();
             System.out.println(this.getRole() + " feeds " + aniName + " the " + aniType + ".");
-            zoo[i].eat();
-        }
+            zoo.get(i).eat();
+        }  
     }
-
-    public void exercise(Animal[] zoo){
-        for (int i = 0; i < zoo.length; i++){
-            String aniName = zoo[i].getName();
-            String aniType = zoo[i].getAniType();
+    
+    public void exercise(ArrayList<Animal> zoo){
+        int len = zoo.size();
+        for (int i = 0; i < len; i++){
+            String aniName = zoo.get(i).getName();
+            String aniType = zoo.get(i).getAniType();
             System.out.println(this.getRole() + " orders " + aniName + " the " + aniType + " to go roam.");
-            zoo[i].roam();
-        }
+            zoo.get(i).roam();
+        }  
     }
-
-    public void putToSleep(Animal[] zoo){
-        for (int i = 0; i < zoo.length; i++){
-            String aniName = zoo[i].getName();
-            String aniType = zoo[i].getAniType();
+    
+    public void putToSleep(ArrayList<Animal> zoo){
+        int len = zoo.size();
+        for (int i = 0; i < len; i++){
+            String aniName = zoo.get(i).getName();
+            String aniType = zoo.get(i).getAniType();
             System.out.println(this.getRole() + " puts " + aniName + " the " + aniType + " to sleep.");
-            zoo[i].sleep();
-        }
+            zoo.get(i).sleep();
+        }  
     }
 
 }
