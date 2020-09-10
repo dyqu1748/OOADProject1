@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 
+//Abstract class for all types of zoo employees. Has the attributes and methods expected of employee types as well as the getter/setter methods for said attributes.
 abstract class ZooEmployee{
 
     private String name;
@@ -68,6 +69,7 @@ class Zookeeper extends ZooEmployee{
         this.setEmpID();
     }
 
+    //Methods below provide abstraction for the responsibilities expected or the zookeeper (feed animals, wake them up, put them to sleep, etc.)
     //The methods below will take in an arraylist of animals, iterate through them, and perform the appropriate action on them.
     //Each method will also announce that the zookeeper is perfoming said action on the current animal in the arraylist
     
