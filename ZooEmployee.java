@@ -8,15 +8,17 @@ abstract class ZooEmployee{
     private float wage;
     private String role;
     //Every employee will have an id attribute to identify them. It will correlate to when they created with respect to the other employees.
-    private int empID;
+    private String empID;
     private static int empCount = 0;
+    
+    //clockIn and clockOut will be utilized to notify the user that the zookeeper has arrived on day X. They should be used in conjuction with a print statement in main.
 
-    public void clockIn(){
-        System.out.println(this.role + " arrives ");
+    public String clockIn(){
+        return(this.role + " arrives ");
     }
 
-    public void clockOut(){
-        System.out.println(this.role + " goes home ");
+    public String clockOut(){
+        return(this.role + " goes home ");
     }
 
     //Getter and setter functions for ZooEmployee's private attributes
@@ -44,12 +46,13 @@ abstract class ZooEmployee{
         return role;
     }
 
+    //Employee ID's will have EMP at the front to distinguish them from the animals' IDs.
     public void setEmpID(){
         empCount++;
-        empID = empCount;
+        empID = "EMP" + empCount;
     }
 
-    public int getEmpID(){
+    public String getEmpID(){
         return empID;
     }
 
@@ -65,7 +68,9 @@ class Zookeeper extends ZooEmployee{
         this.setEmpID();
     }
 
-    //Take in an arraylist of animals, iterate through them, and perform the appropriate action on them
+    //The methods below will take in an arraylist of animals, iterate through them, and perform the appropriate action on them.
+    //Each method will also announce that the zookeeper is perfoming said action on the current animal in the arraylist
+    
     public void wakeAnimals(ArrayList<Animal> zoo){
         int len = zoo.size();
         for (int i = 0; i < len; i++){
