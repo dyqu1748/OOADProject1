@@ -187,7 +187,7 @@ class Rhino extends Pachyderm{
 
 class Hippo extends Pachyderm{
     
-    private static int nunAni = 0;
+    private static int numAni = 0;
     String[] nameChoice = {"Harry", "Hannah"};
     
     public Hippo(){
@@ -428,7 +428,7 @@ class Zookeeper extends ZooEmployee{
         for (int i = 0; i < zoo.length; i++){
             String aniName = zoo[i].getName();
             String aniType = zoo[i].getAniType();
-            System.out.println(this.getName() + " puts " + aniName + " the " + aniType + " to sleep.");
+            System.out.println(this.getRole() + " puts " + aniName + " the " + aniType + " to sleep.");
             zoo[i].sleep();
         }  
     }
