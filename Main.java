@@ -6,6 +6,7 @@ public class Main {
 
         //Create the Zoo
         zoo AnnasZoo = new zoo();
+        //create a variable to hold all the Animals from the Zoo
         ArrayList<Animal> Animals = AnnasZoo.BuildAnimals();
 
         //intalize a Zookeeper
