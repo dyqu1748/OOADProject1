@@ -8,7 +8,7 @@ public class Main {
         zoo AnnasZoo = new zoo();
         ArrayList<Animal> Animals = AnnasZoo.BuildAnimals();
 
-        //intalize a Zookeeper... need to figure out how to randomize this and run for 7 days
+        //intalize a Zookeeper
         Zookeeper z = new Zookeeper("Caral", 20);
 
         //for a period of 7 days
