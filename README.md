@@ -1,7 +1,7 @@
 # OOAD-Project1
 
 ### Members:
-Anna Nuggehalli, Dylan Quash, Casey Tran
+Anna Nuggehalli, Dylan Quach, Casey Tran
 
 ## Assumptions Made:
 
