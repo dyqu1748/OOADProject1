@@ -1,3 +1,4 @@
+### Taken from https://piazza.com/class/kdp0freubiw2w3?cid=68
 ### macOS template
 # General
 .DS_Store
